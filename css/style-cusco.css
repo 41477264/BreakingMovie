@@ -1,0 +1,110 @@
+
+img.centered{display:block;margin:0 auto 24px}
+
+img.post-centro{
+	display:block;margin:0 auto -10px;background-color:#f8f8f8;padding:3px;
+border:1px solid #ccc;-moz-border-radius:3px;-webkit-border-radius:3px;-ms-border-radius:3px;
+border-radius:3px
+}
+img.centered{display:block;margin:0 auto 24px}
+
+img.post-centro{
+	display:block;margin:0 auto -10px;background-color:#f8f8f8;padding:3px;
+border:1px solid #ccc;-moz-border-radius:3px;-webkit-border-radius:3px;-ms-border-radius:3px;
+border-radius:3px
+}
+
+.card{
+
+    width: 300px;
+    padding: 0 0 5px;
+    margin: 10px auto;
+    border-radius: 5px;
+    box-shadow: 5px 6px 11px 0px grey;
+    }
+    
+    .imagen{
+        width: 300px;
+        height: 100px;
+        border-radius: 5px 5px 0 0;
+        object-fit: cover;
+    }
+    
+    .contenedor{
+        width: 100%;
+        margin: 0px auto;
+        overflow: hidden;
+    }
+    
+    .title{
+        text-align: center;
+        color: red;
+        margin: 10px;
+        
+      
+    }
+    
+    .texto{
+       color: white;
+        text-align: center;
+    }
+/*INICIO DE CONTENIDO*/
+#contenido{
+    width: 98%;
+    height: 1000px;
+    margin: 10px auto;
+    border: 1px solid cyan;
+}
+/*FIN DE CONTENIDO*/
+
+/*  IMAGEN  */
+.img:hover{
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -o-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2)
+   
+}
+
+body{
+    background-color: #222;
+ }
+
+ h2{
+     color: aqua;
+     text-align: center;
+ }
+
+h3 {
+  color: aqua;
+  text-align: center;
+  padding: 25px;
+  font-size: 30px;
+}
+
+ .imagen-1{
+     border: solid 10px rgb(176, 161, 161);
+     display: flex;
+     width:60% ;
+     justify-content: space-around;
+     flex-wrap: wrap;
+     max-width: 1000px;
+     margin: auto;
+     border-radius: 20px;
+     animation: escalar 1.6s infinite alternate;
+     box-shadow: 5px 8px 12px black ;
+     cursor: pointer;
+ }
+ .imagen-1{
+ 
+ transform: translate(-50%, -50%);
+ }
+ @keyframes escalar{
+ to{
+     transform: scale(1);
+ }
+ from{
+     transform: scale(1.01);
+ }
+}

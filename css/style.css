@@ -1,0 +1,375 @@
+/*  ::  ESTLOS DE FUENTES   ::  */
+@font-face{
+    font-family: "TrebuchetMS";
+    src: url("fonts/TrebuchetMS.ttf");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face{
+    font-family: "BebasNeue";
+    src: url("fonts/BebasNeue.otf");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face{
+    font-family: "WebSymbolsRegular";
+    src: url("fonts/websymbols-regular-webfont.svg#webSymbolsRegular") format("svg"),
+        url("fonts/websymbols-regular-webfont.eot");
+    src: url("fonts/websymbols-regular-webfont.eot#iefix") format("enbedded-opentype"),
+        url("fonts/websymbols-regular-webfont.woff") format("woff"),
+        url("fonts/websymbols-regular-webfont.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+/*  ::  FIN DE ESTILOS DE FUENTES   ::  */
+
+/*  ::  ESTILOS GENERALES   ::  */
+*{
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  background:url("../img/pattern.png");
+}
+
+.icon{
+  font-family: "WebSymbolsRegular";
+}
+
+.clearfix{
+  float: none;
+  clear: both;
+}
+/*  ::  FIN ESTILOS GENERALES   ::  */
+
+/*  ::  INICIO DE CABECERA  ::  */
+.header {
+  background-color: black;
+  height: 90px;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1050px;
+  margin: auto;
+}
+
+.nav-link {
+  background-color: bla;
+  color: white;
+  text-decoration: none;
+}
+
+.logo {
+  font-size: 18px;
+  font-weight: bold;
+  padding: 0 40px;
+  line-height: 90px;
+}
+
+.logo img {
+  height: 70px;
+  margin: 10px 0;
+}
+
+.nav-menu {
+  display: flex;
+  margin-right: 40px;
+  list-style: none;
+}
+
+.nav-menu-item {
+  font-size: 18px;
+  margin: 0 10px;
+  line-height: 90px;
+  text-transform: uppercase;
+  width: max-content;
+}
+
+.nav-menu-link {
+  padding: 8px 12px;
+  border-radius: 5px;
+}
+
+.nav-menu-link:hover,
+.nav-menu-link_active {
+  background-color: gray;
+  transition: .5s;
+}
+
+.nav-toggle {
+  color: white;
+  background: none;
+  border: none;
+  font-size: 30px;
+  padding: 0 20px;
+  line-height: 60px;
+  cursor: pointer;
+  display: none;
+}
+/*  ::  FIN DE CABECERA ::  */
+
+/*  ::  INICIO PIE DE PAGINA    ::  */
+.footer {
+  width: 100%;
+  background-color: black;
+}
+
+.footer p,
+.footer h2,
+.footer li,
+.footer a {
+  color: white;
+}
+
+.footer .grupo-1 {
+  width: 100%;
+  max-width: 1050px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 30%);
+  grid-gap: 25px;
+  padding: 20px 0;
+}
+
+.footer a {
+  text-decoration: none;
+  margin-top: 0px;
+}
+
+.footer ul {
+  text-align: left;
+  margin: 20px;
+  font-size: 20px;
+  list-style-type: none;
+}
+
+.footer ul li {
+  margin-top: 10px;
+  padding: 5px;
+}
+
+.footer ul li a {
+  display: block;
+  height: 40px;
+  transition: all 300ms;
+}
+
+.footer ul li:hover a {
+  padding-left: 40px;
+  width: 100%;
+}
+
+.footer .info-sociales {
+  font-size: 15px;
+  margin: 10px auto;
+  text-align: center;
+}
+
+.iconos-sociales {
+  height: 100px;
+}
+
+.iconos-sociales .facebook,
+.iconos-sociales .twitter,
+.iconos-sociales .youtube {
+  float: left;
+  display: block;
+  align-items: center;
+  font-size: 45px;
+  margin: 0 25px;
+  padding: 5px;
+}
+
+.iconos-sociales .overly {
+  font-size: 12px;
+  margin-top: 10px;
+  margin-left: -8px;
+  padding: 5px;
+  display: block;
+  height: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-shadow: 0px 0px 1px #ccc;
+  position: absolute;
+  font-family: Arial, Helvetica, sans-serif;
+  transform: translateY(-10%);
+  opacity: 0;
+  transition: all 300ms;
+}
+
+.iconos-sociales div:hover .overly {
+  opacity: 1;
+  transform: translateY(0%);
+}
+
+.twitt-icon {
+  float: left;
+  display: block;
+  font-size: 20px;
+}
+
+.footer .box .email {
+  width: 100%;
+  border: 1px solid white;
+  border-radius: 10px;
+  padding: 10px;
+  transition: all 300ms;
+}
+
+.footer .box .email:hover {
+  box-shadow: 0px 0px 20px white;
+  transform: scale(1.1, 1.1);
+}
+
+.footer .box .email a {
+  display: block;
+  float: left;
+  font-size: 45px;
+}
+
+.footer .box .email p {
+  display: block;
+  font-size: 15px;
+  margin-top: 10px;
+  margin-left: 30px;
+}
+
+.footer .box .store img {
+  display: block;
+  width: 243PX;
+  height: 75px;
+  margin: 25px auto;
+  align-items: center;
+}
+
+.footer .box h2 {
+  font-size: 20px;
+  margin-top: 5px;
+  text-align: center;
+}
+
+.footer .box p:last-child {
+  margin-top: 5px;
+}
+
+.footer .box p:last-child a {
+  color: white;
+}
+
+.footer .box p:last-child a:hover {
+  color: white;
+  transform: scale(1.5, 1.5);
+}
+
+.footer .grupo-2 {
+  background-color: rgba(0, 0, 0, .75);
+  height: 50px;
+}
+
+.footer .grupo-2 p {
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  max-width: 1050px;
+  margin: 10px auto;
+}
+/*  ::  FIN DE PIE DE PAGINA    ::  */
+
+@media (max-width: 1000px) {
+
+  /*  --  HEADER  --  */
+  .header {
+    width: 100%;
+    height: 70px;
+  }
+
+  .logo {
+    padding: 0 20px;
+    line-height: 70px;
+  }
+
+  .logo img {
+    height: 50px;
+  }
+
+  .nav-menu {
+    flex-direction: column;
+    align-items: center;
+    margin-right: 20px;
+    background-color: black;
+    position: fixed;
+    left: 0;
+    top: 70px;
+    width: 100%;
+    height: calc(100% - 70px);
+    overflow-y: auto;
+    left: 100%;
+    transition: left .5s;
+  }
+
+  .nav-menu-link:hover,
+  .nav-menu-link_active {
+    background-color: gray;
+    transition: .5s;
+  }
+
+  .nav-toggle {
+    display: block;
+    margin-bottom: 20px;
+  }
+
+  .nav-menu_visible {
+    left: 0;
+  }
+
+  .nav-toggle:focus:not(:focus-visible) {
+    outline: none;
+  }
+
+  /*  --  FOOTER  --  */
+  .footer .grupo-1 {
+    width: 100%;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 20px;
+    padding: 20px 0;
+  }
+
+  .iconos-sociales .facebook,
+  .iconos-sociales .twitter,
+  .iconos-sociales .youtube {
+    margin: 0 25px;
+    padding: 0 auto;
+    text-align: center;
+    align-items: center;
+  }
+
+  .footer .box .email {
+    width: 35%;
+    margin: 0 auto;
+  }
+
+  .footer .box .email a {
+    margin: 15px auto;
+  }
+
+  .footer .box .email p {
+    display: block;
+    font-size: 15px;
+    margin-top: 10px;
+    margin-left: 30px;
+  }
+
+  .footer .grupo-2 p {
+    font-size: 18px;
+    text-align: center;
+  }
+}

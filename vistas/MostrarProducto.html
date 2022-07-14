@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="favicon/x-icon" href="../img/Logo.png">
+  <title>Breaking Movie</title>
+
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/simplex/bootstrap.min.css">
+  <script src="https://kit.fontawesome.com/5749bb9092.js" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script defer src="../js/style.js"></script>
+</head>
+
+<body>
+  <!--INICIO DE CABECERA-->
+  <header class="header">
+    <nav class="nav">
+      <a href="../index.html" class="logo">
+        <img src="../img/Logo.png" alt="BreakingMovie">
+      </a>
+
+      <button class="nav-toggle" aria-label="Abrir menú">
+        <i class="fas fa-bars"></i>
+      </button>
+
+      <ul class="nav-menu">
+        <li class="nav-menu-item"><a href="../vistas/vistas-peliculas.html" class="nav-menu-link nav-link">Peliculas</a>
+        </li>
+        <li class="nav-menu-item"><a href="../vistas/Lugares.html" class="nav-menu-link nav-link">Cines</a></li>
+        <li class="nav-menu-item"><a href="../vistas/vistas-promociones.html"
+            class="nav-menu-link nav-link">Dulcerías/Promociones</a></li>
+        <li class="nav-menu-item"><a href="../vistas/contacto.html" class="nav-menu-link nav-link">Contacto</a></li>
+        <li class="nav-menu-item"><a href="../vistas/login.html" class="nav-menu-link nav-link">Login</a></li>
+      </ul>
+    </nav>
+  </header>
+  <!--FIN DE CABECARA-->
+  <div class="clearfix"></div>
+
+  <main>
+    <div class="container">
+      <div class="row">
+        <div class="titulo-header">
+          <h1>PRODUCTOS ADQUIRIDOS</h1>
+        </div>
+
+        <div class="col-md-6" id="task-container">
+
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!---INICIO DE PIE DE PAGINA-->
+  <footer class="footer">
+    <div class="grupo-1">
+      <div class="box">
+        <ul>
+          <li><a href="../vistas/somos.html">Nosotros</a></li>
+          <li><a href="#">Trabaja con nosotros</a></li>
+          <li><a href="#">Politicas de privacidad</a></li>
+        </ul>
+      </div>
+      <div class="box">
+        <p class="info-sociales">
+          Síguenos si amas las películas o quieres enterarte de nuestras promociones, concursos y más.
+        </p>
+        <div class="iconos-sociales">
+          <div class="facebook">
+            <a href="#" class="icon">
+              <i class="fa-brands fa-facebook-square"></i>
+            </a>
+            <p class="overly">
+              Facebook
+            </p>
+          </div>
+          <div class="twitter">
+            <a href="#" class="icon">
+              <i class="fa-brands fa-twitter"></i>
+            </a>
+            <p class="overly">
+              Twitter
+            </p>
+          </div>
+          <div class="youtube">
+            <a href="#" class="icon">
+              <i class="fa-brands fa-youtube"></i>
+            </a>
+            <p class="overly">
+              YouTube
+            </p>
+          </div>
+        </div>
+        <div class="email">
+          <a href="#" class="icon">
+            <i class="fa-solid fa-square-envelope"></i>
+          </a>
+          <p class="info-sociales">
+            Atencion de consultas o incidencias por favor Contactenos
+          </p>
+        </div>
+      </div>
+      <div class="box">
+        <p class="info-sociales">
+          El universo Breaking movie también está al alcance de tus dedos.
+        </p>
+        <p class="store">
+          <a href="#">
+            <img class="icon" src="../img/PlayStore.png" alt="Cargando imagen">
+          </a>
+          <a href="#">
+            <img class="icon" src="../img/AppStore.png" alt="Cargando Imagen">
+          </a>
+        </p>
+        <h2>Informacion publica de Breaking Movie</h2>
+        <p class="info-sociales">
+          Para acceder a nuestra información pública que se difunde en el Portal del Mercado de Valores hacer
+          <a href="#">click aquí.</a>
+        </p>
+      </div>
+    </div>
+    <div class="grupo-2">
+      <p>
+        <small>&copy; 2022 - <b>Breaking Movie</b> - Todos los Derechos Reservados</small>
+      </p>
+    </div>
+  </footer>
+  <!--FIN DE PIE DE PAGINA-->
+
+  <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.0/firebase-app.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+    import { getFirestore, doc, setDoc, collection, addDoc, getDocs, query, where, onSnapshot, deleteDoc, getDoc } from "https://www.gstatic.com/firebasejs/9.9.0/firebase-firestore.js";
+
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyA4hxr_O3YEBZkxvgiFMeR3K7i4lXgEKSs",
+      authDomain: "brakin-movie.firebaseapp.com",
+      projectId: "brakin-movie",
+      storageBucket: "brakin-movie.appspot.com",
+      messagingSenderId: "860951424182",
+      appId: "1:860951424182:web:3e7472203eb37cc2b6ca17"
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    // Initialize Cloud Firestore and get a reference to the service
+    const db = getFirestore(app);
+
+    window.addEventListener('DOMContentLoaded', async () => {
+      const container = document.getElementById('task-container');
+      /*const querySnapshot = await getDocs(collection(db, "Nombres"));
+      querySnapshot.forEach((doc) => {
+          // doc.data() is never undefined for query doc snapshots
+          console.log(doc.id, " => ", doc.data());
+          container.innerHTML = `${container.innerHTML}<div class='card card-body mt-2' border-primary><h3>${doc.data().titulo}</h3><p>${doc.data().descripcion}</p><div><button class='btn btn-primary'>Delete</button></div></div>`
+      });*/
+
+      const q = query(collection(db, "Tareas"));// where("state", "==", "CA"));
+      const unsubscribe = onSnapshot(q, (querySnapshot) => {
+        container.innerHTML = '';
+        //const cities = [];
+        querySnapshot.forEach((docu) => {
+          //cities.push(doc.data().name);
+          //console.log(doc.id, " => ", doc.data());
+          container.innerHTML = `${container.innerHTML}<div class='card card-body mt-2' border-primary><h3>${docu.data().nom}</h3><p>${docu.data().prec}</p><h3>${docu.data().cant}</h3><div><button class='btn btn-primary btnDelete' data-id=${docu.id}>Delete</button></div></div>`
+
+          const btnEliminar = document.querySelectorAll('.btnDelete');
+          console.log(btnEliminar);
+          btnEliminar.forEach((btn) => {
+            btn.addEventListener('click', async (e) => {
+              console.log(e.target);
+
+              await deleteDoc(doc(db, "Tareas", e.target.dataset.id));
+            })
+          })
+        });
+        //console.log("Current cities in CA: ", cities.join(", "));
+      });
+    })
+  </script>
+</body>
+
+</html>
